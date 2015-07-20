@@ -43,7 +43,7 @@ func main() {
     log.Fatal(err)
   }
 
-  var y ytMedia_embed
+  var y reddit
   err = json.Unmarshal(body, &y)
 
   if err != nil {
