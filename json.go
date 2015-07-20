@@ -16,7 +16,17 @@ type ytData struct {
 }
 
 type ytChildren struct {
-  Kind string `json:"kind"`
+  Children_data ytChildren_data `json:"data"`
+}
+
+type ytChildren_data struct {
+  Media_embed ytMedia_embed `json:"media_embed"`
+}
+
+type ytMedia_embed struct {
+  Width int `json:"width"`
+  Scrolling bool `json:"scrolling"`
+  Height int `json:"height"`
 }
 
 func main() {
@@ -33,7 +43,7 @@ func main() {
     log.Fatal(err)
   }
 
-  var y reddit
+  var y ytMedia_embed
   err = json.Unmarshal(body, &y)
 
   if err != nil {
