@@ -12,7 +12,11 @@ type reddit struct {
 
 type ytData struct {
   Modhash string `json:"modhash"`
-  Children []interface{} `json:"children"`
+  Children []ytChildren `json:"children"`
+}
+
+type ytChildren struct {
+  Kind string `json:"kind"`
 }
 
 func main() {
