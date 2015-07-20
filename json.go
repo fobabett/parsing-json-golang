@@ -5,7 +5,10 @@ import "io/ioutil"
 import "log"
 import "encoding/json"
 
-
+type reddit struct {
+  Kind string `json:"kind"`
+  Data ytData `json:"data"`
+}
 
 func main() {
   resp, err := http.Get("http://www.reddit.com/r/aww.json")
