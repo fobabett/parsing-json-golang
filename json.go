@@ -10,6 +10,11 @@ type reddit struct {
   Data ytData `json:"data"`
 }
 
+type ytData struct {
+  Modhash string `json:"modhash"`
+  Children []interface{} `json:"children"`
+}
+
 func main() {
   resp, err := http.Get("http://www.reddit.com/r/aww.json")
   if err != nil {
